@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = Modulus
+build_property.ProjectDir = /Users/joshuahal/Documents/Modulus/Modulus/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

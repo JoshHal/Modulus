@@ -1,0 +1,339 @@
+{
+  "manifestId": "beverage-plant-001",
+  "projectName": "Beverage Plant",
+  "createdDate": "2025-01-15T10:30:00Z",
+  "envelopeLength": 50000,
+  "envelopeWidth": 30000,
+  "envelopeHeight": 8000,
+  
+  "modelLibrary": {
+    "libraryName": "Beverage Equipment Catalog",
+    "basePath": "C:\\Modulus\\Models\\",
+    "typeColors": {
+      "Source": { "aci": 2, "name": "Yellow" },
+      "Intermediate": { "aci": 7, "name": "White" },
+      "Sink": { "aci": 4, "name": "Cyan" }
+    }
+  },
+  
+  "machines": {
+    "HOPPER_RAW": {
+      "machineId": "HOPPER_RAW",
+      "machineName": "Raw Material Hopper",
+      "throughputKgPerHour": 5000,
+      "powerConsumptionKw": 15,
+      "footprintLength": 2000,
+      "footprintWidth": 2000,
+      "footprintHeight": 3000,
+      "type": "Source",
+      "processingTimePerUnitSeconds": 0,
+      "modelFilePath": "equipment/hopper.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Outlet": [0, 0, -1500]
+      }
+    },
+    
+    "MIXER_PRIMARY": {
+      "machineId": "MIXER_PRIMARY",
+      "machineName": "Primary Mixing Vessel",
+      "throughputKgPerHour": 4800,
+      "powerConsumptionKw": 180,
+      "footprintLength": 3500,
+      "footprintWidth": 2500,
+      "footprintHeight": 2800,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 45,
+      "modelFilePath": "equipment/mixer_large.dwg",
+      "blockName": "MIXER_500L",
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet_1": [-1250, -1750, -1400],
+        "Inlet_2": [1250, -1750, -1400],
+        "Outlet": [0, 0, 1400]
+      }
+    },
+    
+    "HEAT_EXCHANGER": {
+      "machineId": "HEAT_EXCHANGER",
+      "machineName": "Cooling Heat Exchanger",
+      "throughputKgPerHour": 4800,
+      "powerConsumptionKw": 85,
+      "footprintLength": 2800,
+      "footprintWidth": 1500,
+      "footprintHeight": 2200,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 20,
+      "modelFilePath": "equipment/heat_exchanger.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [0, -750, -1100],
+        "Outlet": [0, 750, 1100]
+      }
+    },
+    
+    "SECONDARY_MIXER": {
+      "machineId": "SECONDARY_MIXER",
+      "machineName": "Secondary Homogenizer",
+      "throughputKgPerHour": 4500,
+      "powerConsumptionKw": 120,
+      "footprintLength": 2500,
+      "footprintWidth": 2000,
+      "footprintHeight": 2500,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 30,
+      "modelFilePath": "equipment/homogenizer.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [0, -1000, -1250],
+        "Outlet": [0, 1000, 1250]
+      }
+    },
+    
+    "FILTRATION_UNIT": {
+      "machineId": "FILTRATION_UNIT",
+      "machineName": "Multi-Stage Filtration",
+      "throughputKgPerHour": 4500,
+      "powerConsumptionKw": 95,
+      "footprintLength": 3200,
+      "footprintWidth": 1800,
+      "footprintHeight": 2600,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 35,
+      "modelFilePath": "equipment/filtration_unit.dwg",
+      "blockName": "FILTER_SYSTEM_10",
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [0, -900, -1300],
+        "Outlet": [0, 900, 1300]
+      }
+    },
+    
+    "BOTTLING_LINE": {
+      "machineId": "BOTTLING_LINE",
+      "machineName": "Automatic Bottling & Capping",
+      "throughputKgPerHour": 4500,
+      "powerConsumptionKw": 200,
+      "footprintLength": 8000,
+      "footprintWidth": 2200,
+      "footprintHeight": 2400,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 15,
+      "modelFilePath": "equipment/bottling_line_auto.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [-2000, -1100, -1200],
+        "Outlet": [2000, 1100, 1200]
+      }
+    },
+    
+    "LABELING_STATION": {
+      "machineId": "LABELING_STATION",
+      "machineName": "Integrated Labeling & Inspection",
+      "throughputKgPerHour": 4500,
+      "powerConsumptionKw": 65,
+      "footprintLength": 3500,
+      "footprintWidth": 1500,
+      "footprintHeight": 2000,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 12,
+      "modelFilePath": "equipment/labeler_auto.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [0, -750, -1000],
+        "Outlet": [0, 750, 1000]
+      }
+    },
+    
+    "CASE_PACKER": {
+      "machineId": "CASE_PACKER",
+      "machineName": "Automatic Case Packing",
+      "throughputKgPerHour": 4500,
+      "powerConsumptionKw": 40,
+      "footprintLength": 4000,
+      "footprintWidth": 2500,
+      "footprintHeight": 2200,
+      "type": "Intermediate",
+      "processingTimePerUnitSeconds": 18,
+      "modelFilePath": "equipment/case_packer_auto.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [0, -1250, -1100],
+        "Outlet": [0, 1250, 1100]
+      }
+    },
+    
+    "WAREHOUSE_OUTPUT": {
+      "machineId": "WAREHOUSE_OUTPUT",
+      "machineName": "Finished Goods Warehouse Buffer",
+      "throughputKgPerHour": 4500,
+      "powerConsumptionKw": 5,
+      "footprintLength": 5000,
+      "footprintWidth": 4000,
+      "footprintHeight": 3500,
+      "type": "Sink",
+      "processingTimePerUnitSeconds": 0,
+      "modelFilePath": "equipment/warehouse_buffer.dwg",
+      "blockName": null,
+      "modelScale": 1.0,
+      "ports": {
+        "Inlet": [0, -2000, -1750]
+      }
+    }
+  },
+  
+  "processMatrix": {
+    "processId": "process-beverage-001",
+    "flows": [
+      {
+        "flowId": "flow-001",
+        "sourceMachineId": "HOPPER_RAW",
+        "destinationMachineId": "MIXER_PRIMARY",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet_1",
+        "materialType": "Raw Concentrate",
+        "flowRateKgPerHour": 2500,
+        "phase": "Liquid",
+        "requiresCooling": false,
+        "requiresHeating": true
+      },
+      {
+        "flowId": "flow-002",
+        "sourceMachineId": "HOPPER_RAW",
+        "destinationMachineId": "MIXER_PRIMARY",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet_2",
+        "materialType": "Water Supply",
+        "flowRateKgPerHour": 2300,
+        "phase": "Liquid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-003",
+        "sourceMachineId": "MIXER_PRIMARY",
+        "destinationMachineId": "HEAT_EXCHANGER",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Mixed Concentrate",
+        "flowRateKgPerHour": 4800,
+        "phase": "Liquid",
+        "requiresCooling": true,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-004",
+        "sourceMachineId": "HEAT_EXCHANGER",
+        "destinationMachineId": "SECONDARY_MIXER",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Cooled Concentrate",
+        "flowRateKgPerHour": 4800,
+        "phase": "Liquid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-005",
+        "sourceMachineId": "SECONDARY_MIXER",
+        "destinationMachineId": "FILTRATION_UNIT",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Homogenized Liquid",
+        "flowRateKgPerHour": 4500,
+        "phase": "Liquid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-006",
+        "sourceMachineId": "FILTRATION_UNIT",
+        "destinationMachineId": "BOTTLING_LINE",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Filtered Beverage",
+        "flowRateKgPerHour": 4500,
+        "phase": "Liquid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-007",
+        "sourceMachineId": "BOTTLING_LINE",
+        "destinationMachineId": "LABELING_STATION",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Bottled Product",
+        "flowRateKgPerHour": 4500,
+        "phase": "Solid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-008",
+        "sourceMachineId": "LABELING_STATION",
+        "destinationMachineId": "CASE_PACKER",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Labeled Bottles",
+        "flowRateKgPerHour": 4500,
+        "phase": "Solid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      },
+      {
+        "flowId": "flow-009",
+        "sourceMachineId": "CASE_PACKER",
+        "destinationMachineId": "WAREHOUSE_OUTPUT",
+        "sourcePortName": "Outlet",
+        "destinationPortName": "Inlet",
+        "materialType": "Cased Product",
+        "flowRateKgPerHour": 4500,
+        "phase": "Solid",
+        "requiresCooling": false,
+        "requiresHeating": false
+      }
+    ]
+  },
+  
+  "constraints": {
+    "pipeLengthWeight": 0.30,
+    "maintenanceAccessWeight": 0.20,
+    "energyEfficiencyWeight": 0.25,
+    "safetyZoneWeight": 0.15,
+    "floorSpaceUtilizationWeight": 0.10
+  },
+  
+  "restrictedZones": [
+    {
+      "zoneId": "zone-emergency-exit-north",
+      "minX": 48000,
+      "maxX": 50000,
+      "minY": 14000,
+      "maxY": 16000,
+      "reason": "Emergency Exit"
+    },
+    {
+      "zoneId": "zone-utility-corridor",
+      "minX": 0,
+      "maxX": 2000,
+      "minY": 0,
+      "maxY": 30000,
+      "reason": "Utility Corridor - Power, Water, Gas"
+    },
+    {
+      "zoneId": "zone-maintenance-access",
+      "minX": 45000,
+      "maxX": 50000,
+      "minY": 0,
+      "maxY": 30000,
+      "reason": "Service & Maintenance Access"
+    }
+  ]
+}
