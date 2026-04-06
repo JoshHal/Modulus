@@ -1,22 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "MWuTkNceyl0=",
-  "success": true,
+  "dgSpecHash": "GOf98ZxeZSQ=",
+  "success": false,
   "projectFilePath": "/Users/joshuahal/Documents/Modulus/Modulus/Modulus.csproj",
   "expectedPackageFiles": [
-    "/Users/joshuahal/.nuget/packages/microsoft.bcl.asyncinterfaces/10.0.5/microsoft.bcl.asyncinterfaces.10.0.5.nupkg.sha512",
     "/Users/joshuahal/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/quikgraph/2.5.0/quikgraph.2.5.0.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.buffers/4.6.1/system.buffers.4.6.1.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.io.pipelines/10.0.5/system.io.pipelines.10.0.5.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.memory/4.6.3/system.memory.4.6.3.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.numerics.vectors/4.6.1/system.numerics.vectors.4.6.1.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.runtime.compilerservices.unsafe/6.1.2/system.runtime.compilerservices.unsafe.6.1.2.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.text.encodings.web/10.0.5/system.text.encodings.web.10.0.5.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.text.json/10.0.5/system.text.json.10.0.5.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.threading.tasks.extensions/4.6.3/system.threading.tasks.extensions.4.6.3.nupkg.sha512",
-    "/Users/joshuahal/.nuget/packages/system.valuetuple/4.6.1/system.valuetuple.4.6.1.nupkg.sha512"
+    "/Users/joshuahal/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Autodesk.AutoCAD.Interop.Common. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/Users/joshuahal/Documents/Modulus/Modulus/Modulus.csproj",
+      "filePath": "/Users/joshuahal/Documents/Modulus/Modulus/Modulus.csproj",
+      "libraryId": "Autodesk.AutoCAD.Interop.Common",
+      "targetGraphs": [
+        "net48"
+      ]
+    }
+  ]
 }

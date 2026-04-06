@@ -44,19 +44,15 @@
         "net48": {
           "targetAlias": "net48",
           "dependencies": {
+            "Autodesk.AutoCAD.Interop.Common": {
+              "target": "Package",
+              "version": "[24.*, )"
+            },
             "Microsoft.NETFramework.ReferenceAssemblies": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[1.0.3, )",
               "autoReferenced": true
-            },
-            "QuikGraph": {
-              "target": "Package",
-              "version": "[2.5.0, )"
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[10.0.5, )"
             }
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/RuntimeIdentifierGraph.json"

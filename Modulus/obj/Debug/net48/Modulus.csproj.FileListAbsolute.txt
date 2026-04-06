@@ -3,3 +3,4 @@
 /Users/joshuahal/Documents/Modulus/Modulus/obj/Debug/net48/Modulus.AssemblyInfo.cs
 /Users/joshuahal/Documents/Modulus/Modulus/obj/Debug/net48/Modulus.csproj.CoreCompileInputs.cache
 /Users/joshuahal/Documents/Modulus/Modulus/obj/Debug/net48/Modulus.csproj.AssemblyReference.cache
+/Users/joshuahal/Documents/Modulus/Modulus/obj/Debug/net48/Modulus.sourcelink.json
