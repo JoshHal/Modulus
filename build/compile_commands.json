@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/joshuahal/Documents/Modulus/build",
+  "command": "/usr/bin/clang++ -DMODULUS_EXPORTS -I\"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc\" -I\"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc-arm64\" -g -std=gnu++17 -arch arm64 -fPIC -o CMakeFiles/MODULUS.dir/src/main.cpp.o -c /Users/joshuahal/Documents/Modulus/src/main.cpp",
+  "file": "/Users/joshuahal/Documents/Modulus/src/main.cpp",
+  "output": "CMakeFiles/MODULUS.dir/src/main.cpp.o"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -arch arm64 -bundle -Wl,-headerpad_max_install_names -o ./bin.bundle/Contents/MacOS/./bin CMakeFiles/MODULUS.dir/src/main.cpp.o   -L"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/lib-arm64"  -Wl,-rpath,"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/lib-arm64" -framework Cocoa -lacge -laccore -lacdb
