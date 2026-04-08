@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/joshuahal/Documents/Modulus/build",
+  "command": "/usr/bin/clang++ -DMyExtension_EXPORTS -DUNICODE -D_ADESK_MAC_ -D_AFXDLL -D_UNICODE -D_USRDLL -I\"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc\" -I\"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc/PAL/api\" -I\"/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc/PAL\" -g -std=gnu++17 -arch arm64 -mmacosx-version-min=10.15 -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -Wno-nonportable-include-path -Wno-unused-value -Wno-format-security -o CMakeFiles/MyExtension.dir/src/main.cpp.o -c /Users/joshuahal/Documents/Modulus/src/main.cpp",
+  "file": "/Users/joshuahal/Documents/Modulus/src/main.cpp",
+  "output": "CMakeFiles/MyExtension.dir/src/main.cpp.o"
+}
+]

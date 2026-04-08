@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc",
+        "/Users/joshuahal/Developer/Autodesk/ObjectARX 2027/inc/**"
+      ],
+      "defines": [
+        "_ADESK_MAC_",
+        "_UNICODE",
+        "UNICODE"
+      ],
+      "macFrameworkPath": [
+        "/System/Library/Frameworks",
+        "/Library/Frameworks"
+      ],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "macos-clang-x64"
+    }
+  ],
+  "version": 4
+}

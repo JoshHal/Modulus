@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -arch arm64 -mmacosx-version-min=10.15 -bundle -Wl,-headerpad_max_install_names -undefined dynamic_lookup -o bin/MyExtension.bundle/Contents/MacOS/MyExtension CMakeFiles/MyExtension.dir/src/main.cpp.o  -framework Cocoa -framework CoreFoundation -framework AppKit
