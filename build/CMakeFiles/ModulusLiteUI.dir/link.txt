@@ -1,0 +1,2 @@
+/usr/bin/ar qc libModulusLiteUI.a CMakeFiles/ModulusLiteUI.dir/ModulusLiteUI_autogen/mocs_compilation.cpp.o CMakeFiles/ModulusLiteUI.dir/ui_panel.cpp.o
+/usr/bin/ranlib libModulusLiteUI.a
