@@ -1,2 +1,0 @@
-/usr/bin/ar qc libModulusLiteCore.a
-/usr/bin/ranlib libModulusLiteCore.a
