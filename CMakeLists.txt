@@ -7,32 +7,42 @@ project(ModulusLite LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
 
 # Enable Qt auto tools
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+if(MSVC)
+    add_definitions(
+        -D_UNICODE 
+        -DUNICODE       # AutoCAD is strictly Unicode
+        -D_AFXDLL       # Required if using MFC/Shared DLLs
+        -D_AC25_        # Replace 25 with your version (e.g., 24 for 2024)
+        -D_WIN64        # Target 64-bit
+    )
+    
+    # Ensure we use the Multi-threaded DLL runtime (/MD)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+endif()
+
 # ============================================================================
 # DEPENDENCIES
 # ============================================================================
 
-# ObjectARX SDK (UPDATE THIS TO ABSOLUTE PATH IF NEEDED)
+# ObjectARX SDK (Windows version ONLY)
 set(OBJECTARX_SDK_PATH
-    "${CMAKE_CURRENT_SOURCE_DIR}/../ObjectARX2027Mac"
-    CACHE PATH "Path to ObjectARX 2027 Mac SDK"
+    "C:/CDROM1"
+    CACHE PATH "Path to ObjectARX SDK"
 )
 
-# Debug paths (useful during setup)
 message(STATUS "OBJECTARX_SDK_PATH = ${OBJECTARX_SDK_PATH}")
-message(STATUS "ARX INC PATH       = ${OBJECTARX_SDK_PATH}/inc")
 
-# Qt5 (Homebrew path)
-list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/opt/qt@5")
+# Qt5
+list(APPEND CMAKE_PREFIX_PATH "C:/Users/admin/Downloads/Modulus-main/5.15.2/msvc2019_64")
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
 
 # ============================================================================
-# CORE LIBRARY (HEADER-ONLY)
+# CORE LIBRARY
 # ============================================================================
 
 add_library(ModulusLiteCore INTERFACE)
@@ -57,18 +67,16 @@ add_library(ModulusLiteCAD STATIC
 target_include_directories(ModulusLiteCAD PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${OBJECTARX_SDK_PATH}/inc
-    ${OBJECTARX_SDK_PATH}/inc/PAL
-    ${OBJECTARX_SDK_PATH}/inc/PAL/api
+    ${OBJECTARX_SDK_PATH}/inc-x64
 )
 
 target_link_directories(ModulusLiteCAD PUBLIC
     ${OBJECTARX_SDK_PATH}/lib
+    ${OBJECTARX_SDK_PATH}/lib-x64
 )
 
 target_link_libraries(ModulusLiteCAD PUBLIC
     ModulusLiteCore
-    "-framework CoreFoundation"
-    "-framework Cocoa"
 )
 
 # ============================================================================
@@ -92,18 +100,17 @@ target_link_libraries(ModulusLiteUI PUBLIC
 )
 
 # ============================================================================
-# PLUGIN (AutoCAD Bundle)
+# PLUGIN (AutoCAD ARX)
 # ============================================================================
 
 add_library(ModulusLitePlugin MODULE
     plugin_main.cpp
+    exports.def
 )
 
 target_include_directories(ModulusLitePlugin PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${OBJECTARX_SDK_PATH}/inc
-    ${OBJECTARX_SDK_PATH}/inc/PAL
-    ${OBJECTARX_SDK_PATH}/inc/PAL/api
 )
 
 target_link_directories(ModulusLitePlugin PRIVATE
@@ -114,22 +121,20 @@ target_link_libraries(ModulusLitePlugin PRIVATE
     ModulusLiteCore
     ModulusLiteCAD
     ModulusLiteUI
-    "-framework CoreFoundation"
-    "-framework Cocoa"
 )
 
 set_target_properties(ModulusLitePlugin PROPERTIES
     PREFIX ""
-    SUFFIX ".bundle"
-    BUNDLE FALSE
-    MACOSX_BUNDLE FALSE
+    SUFFIX ".arx"
 )
 
 # Copy plugin after build
 add_custom_command(TARGET ModulusLitePlugin POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+        ${CMAKE_BINARY_DIR}/bin
     COMMAND ${CMAKE_COMMAND} -E copy
         $<TARGET_FILE:ModulusLitePlugin>
-        ${CMAKE_BINARY_DIR}/bin/ModulusLite.bundle
+        ${CMAKE_BINARY_DIR}/bin/ModulusLite.arx
 )
 
 # ============================================================================
@@ -152,18 +157,3 @@ target_link_libraries(ModulusLiteTests PRIVATE
 )
 
 add_test(NAME ModulusLiteTests COMMAND ModulusLiteTests)
-
-# ============================================================================
-# INSTALL
-# ============================================================================
-
-install(TARGETS ModulusLitePlugin
-    LIBRARY DESTINATION
-    "Library/Application Support/Autodesk/ApplicationPlugins"
-)
-
-install(FILES
-    README.md
-    LICENSE
-    DESTINATION "."
-)
